@@ -17,7 +17,17 @@ const server = Bun.serve({
       return new Response('Contact page')
     }
 
+    if (url.pathname === '/feed') {
+      throw new Error('Feed is not available')
+    }
+
     return new Response('Not Found', { status: 404 })
+  },
+  error(err) {
+    // return new Response(err.message, { status: 500 })
+    return new Response(`<pre> ${err} \n ${err.stack}</pre>`, {
+      headers: { 'Content-Type': 'text/html' }
+    })
   }
 })
 
