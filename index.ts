@@ -1,4 +1,4 @@
-import figlet from "figlet"
+import figlet from 'figlet'
 
 const server = Bun.serve({
   port: 3000,
@@ -14,8 +14,7 @@ const server = Bun.serve({
     if (url.pathname === '/contact') {
       return new Response('Contact page')
     }
-
-    if (url.pathname === "/feed") {
+    if (url.pathname === '/feed') {
       throw new Error('Feed is not available')
     }
 
@@ -31,6 +30,5 @@ const server = Bun.serve({
     })
   }
 })
-
 
 console.log(`Server running at http://localhost:${server.port}`)
