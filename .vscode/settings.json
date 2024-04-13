@@ -1,0 +1,10 @@
+{
+  "typescript.format.semicolons": "remove",
+  "typescript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "turboConsoleLog.quote": "'",
+  "typescript.implementationsCodeLens.showOnInterfaceMethods": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "javascript.preferences.quoteStyle": "single"
+}

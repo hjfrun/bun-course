@@ -8,19 +8,20 @@ const server = Bun.serve({
       const body = figlet.textSync('Hello LinTing, I am learning Bun!')
       return new Response(body)
     }
-
     if (url.pathname === '/about') {
       return new Response('About page')
     }
-
     if (url.pathname === '/contact') {
       return new Response('Contact page')
     }
 
-    if (url.pathname === '/feed') {
+    if (url.pathname === "/feed") {
       throw new Error('Feed is not available')
     }
 
+    if (url.pathname === '/greet') {
+      return new Response(Bun.file('./greet.txt'))
+    }
     return new Response('Not Found', { status: 404 })
   },
   error(err) {
@@ -30,5 +31,6 @@ const server = Bun.serve({
     })
   }
 })
+
 
 console.log(`Server running at http://localhost:${server.port}`)
